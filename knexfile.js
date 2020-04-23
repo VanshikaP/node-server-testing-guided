@@ -13,10 +13,8 @@ module.exports = {
     },
   },
   production: {
-    client: "postgres",
-    connection: {
-      filename: "./data/test.db3",
-    },
+    client: "pg",
+    connection: process.env.DATABASE_URL,
     useNullAsDefault: true,
     migrations: {
       directory: "./data/migrations",
