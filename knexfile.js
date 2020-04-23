@@ -13,7 +13,7 @@ module.exports = {
     },
   },
   production: {
-    client: "sqlite3",
+    client: "postgres",
     connection: {
       filename: "./data/test.db3",
     },
