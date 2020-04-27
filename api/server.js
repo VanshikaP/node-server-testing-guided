@@ -20,4 +20,15 @@ server.get("/hobbits", (req, res) => {
     });
 });
 
+server.post('/hobbits', async (req, res) => {
+  const insert = await Hobbits.insert(req.body);
+  Hobbits.getAll()
+    .then(hobbits => {
+      res.status(200).json({message: 'hobbit added', hobbits});
+    })
+    .catch(error => {
+      res.status(500).json(error);
+    });
+})
+
 module.exports = server;
